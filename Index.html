@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,6 +12,7 @@
             --text-main: #1a1a1a;
             --text-muted: #666666;
             --accent-pink: #f2c6d0;
+            --accent-green: #d3ebd4;
             --accent-gold: #b38b59;
             --btn-dark: #1a1a1a;
         }
@@ -28,7 +28,7 @@
 
         header {
             text-align: center;
-            padding: 25px 20px 10px 20px;
+            padding: 15px 15px 10px 15px;
             background: var(--bg-color);
             position: sticky;
             top: 0;
@@ -37,25 +37,26 @@
         }
 
         .top-banner {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #777;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
+            text-align: center;
         }
 
         .logo-area {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 480px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 10px;
         }
 
         .brand-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 1px;
         }
@@ -66,169 +67,140 @@
         }
 
         .container {
-            max-width: 480px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 20px 15px 80px 15px;
+            padding: 15px 10px 80px 10px;
+        }
+
+        /* Grid layout for 3 columns on products / 5 on charms */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .charms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .charms-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Product Card Style */
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            position: relative;
-        }
-
-        .badge-fav {
-            background-color: #fcecd4;
-            color: #8c6230;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
         }
 
         .product-img-container {
             position: relative;
             text-align: center;
-            margin-bottom: 15px;
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 8px;
         }
 
         .product-img {
             width: 100%;
-            max-height: 320px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .img-tag {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            font-size: 0.65rem;
-            padding: 4px 8px;
-            border-radius: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .product-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-top: 15px;
+            height: 90px;
+            object-fit: contain;
         }
 
         .product-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin: 0 0 5px 0;
-            line-height: 1.2;
+            margin: 0 0 6px 0;
+            line-height: 1.1;
         }
 
-        .product-desc {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-style: italic;
-            margin: 0;
-        }
-
-        .product-price-action {
-            text-align: right;
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
         }
 
         .price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
         }
 
         .btn-buy {
             background-color: var(--btn-dark);
             color: white;
             border: none;
-            padding: 10px 22px;
-            border-radius: 30px;
-            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
             font-weight: 500;
             cursor: pointer;
-            transition: opacity 0.2s;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-buy:hover {
-            opacity: 0.85;
-        }
-
-        /* Section Signatures */
-        .section-signatures {
+        /* Desserts Section Style */
+        .section-desserts {
             text-align: center;
-            margin: 40px 0 20px 0;
+            margin: 35px 0 15px 0;
         }
 
-        .section-signatures h2 {
+        .section-desserts h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 400;
             margin: 0;
         }
 
-        .section-signatures h2 span {
+        .section-desserts h2 span {
             font-style: italic;
-            color: #557053;
+            color: #d17a8e;
         }
 
-        .quote-box {
+        .note-box {
             background: white;
-            border: 1.5px dashed var(--accent-pink);
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 15px;
+            border: 1px dashed #d17a8e;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 10px 0 20px 0;
             text-align: center;
-            position: relative;
         }
 
-        .quote-tag {
-            background-color: var(--accent-pink);
+        .note-tag {
+            background-color: #f2c6d0;
             color: #6a4952;
-            font-size: 0.65rem;
+            font-size: 0.55rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 4px 10px;
-            border-radius: 10px;
+            padding: 2px 6px;
+            border-radius: 6px;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-weight: 600;
         }
 
-        .quote-text {
+        .note-text {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #444;
             margin: 0;
-        }
-
-        /* Availability Notice */
-        .availability-banner {
-            background-color: #f0ebd8;
-            border-left: 4px solid var(--accent-gold);
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-top: 30px;
-            color: #59442a;
-            line-height: 1.4;
         }
 
         /* WhatsApp Floating Button */
@@ -239,27 +211,27 @@
             background-color: #25d366;
             color: white;
             border-radius: 50px;
-            padding: 10px 20px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             text-decoration: none;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             z-index: 1000;
         }
 
         .whatsapp-float svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: white;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-banner">FUE UNA INVERSIÓN EMOCIONAL.</div>
+    <div class="top-banner">HOY SE SALE A BRILLAR.</div>
 
     <header>
         <div class="logo-area">
@@ -270,44 +242,128 @@
 
     <div class="container">
 
-        <!-- Product Card 1 -->
-        <div class="product-card">
-            <div class="badge-fav">✨ LA FAVORITA PARA PERSONALIZAR</div>
-            <div class="product-img-container">
-                <!-- Puedes cambiar esta imagen por la foto real de tu bolso -->
-                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Bolsa Meraki" class="product-img">
-                <span class="img-tag">ASÍ LA USAN</span>
-            </div>
-            <div class="product-info">
+        <!-- Main Product Grid -->
+        <div class="product-grid">
+
+            <div class="product-card">
                 <div>
-                    <h3 class="product-title">Bolsa Meraki + Tag</h3>
-                    <p class="product-desc">así se completa ✦ cada pieza en su color</p>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80" alt="Tag" class="product-img"></div>
+                    <h3 class="product-title">Tag BARCH</h3>
                 </div>
-                <div class="product-price-action">
-                    <span class="price">$947</span>
-                    <a href="https://wa.me/?text=Hola,%20quiero%20comprar%20la%20Bolsa%20Meraki%20con%20Tag" class="btn-buy" target="_blank">lo quiero</a>
+                <div class="product-footer">
+                    <span class="price">$149</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20Tag%20BARCH" class="btn-buy" target="_blank">lo quiero</a>
                 </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80" alt="Cosmetiquera" class="product-img"></div>
+                    <h3 class="product-title">Cosmetiquera</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$349</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20la%20Cosmetiquera" class="btn-buy" target="_blank">lo quiero</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=300&q=80" alt="Tarjetero" class="product-img"></div>
+                    <h3 class="product-title">Tarjetero</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$210</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20Tarjetero" class="btn-buy" target="_blank">lo quiero</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=300&q=80" alt="Neceser" class="product-img"></div>
+                    <h3 class="product-title">Neceser</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$549</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20Neceser" class="btn-buy" target="_blank">lo quiero</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=300&q=80" alt="Portadocumentos" class="product-img"></div>
+                    <h3 class="product-title">Portadocumentos</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$349</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20Portadocumentos" class="btn-buy" target="_blank">lo quiero</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=300&q=80" alt="Cartera" class="product-img"></div>
+                    <h3 class="product-title">Cartera</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$349</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20la%20Cartera" class="btn-buy" target="_blank">lo quiero</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Desserts / Charms Section -->
+        <div class="section-desserts">
+            <h2>Des<i>s</i>erts</h2>
+            <div class="note-box">
+                <span class="note-tag">NOTA DE LA CASA</span>
+                <p class="note-text">“¿Sabías que los charms son coleccionables? Dicen por ahí que ya hay alguien con los ocho.”</p>
             </div>
         </div>
 
-        <!-- Collection Section -->
-        <div class="section-signatures">
-            <h2>Meraki <span>Signatures</span></h2>
-            <div class="quote-box">
-                <span class="quote-tag">NOTA DE LA DISEÑADORA</span>
-                <p class="quote-text">“el 80% de las DIDIS girls tienen al menos tres piezas de la colección.”</p>
-            </div>
-        </div>
+        <!-- Charms Grid -->
+        <div class="charms-grid">
 
-        <!-- Stock / Availability Notice -->
-        <div class="availability-banner">
-            <strong>⚠️ Alta demanda y disponibilidad limitada:</strong> Los bolsos son por disponibilidad. No hay stock ilimitado de bolsos ni de colores en esta edición especial.
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=300&q=80" alt="Charm" class="product-img"></div>
+                    <h3 class="product-title">APPLE CLUB</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$149</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20charm%20APPLE%20CLUB" class="btn-buy" target="_blank">agregar +</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=300&q=80" alt="Charm" class="product-img"></div>
+                    <h3 class="product-title">CHERRY CLUB</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$149</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20charm%20CHERRY%20CLUB" class="btn-buy" target="_blank">agregar +</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-img-container"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=300&q=80" alt="Charm" class="product-img"></div>
+                    <h3 class="product-title">CHERRY KISS</h3>
+                </div>
+                <div class="product-footer">
+                    <span class="price">$149</span>
+                    <a href="https://wa.me/?text=Hola,%20quiero%20el%20charm%20CHERRY%20KISS" class="btn-buy" target="_blank">agregar +</a>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/?text=Hola,%20estoy%20viendo%20la%20web%20de%20DIDIS%20COLLECTION%20y%20quiero%20asesoría." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/?text=Hola,%20estoy%20en%20la%20web%20de%20DIDIS%20COLLECTION%20y%20quiero%20hacer%20un%20pedido." class="whatsapp-float" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         WhatsApp
     </a>
